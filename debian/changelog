@@ -1,3 +1,9 @@
+missingpy (0.8.2) unstable; urgency=low
+
+  * Bump depends on MissingH.  Closes: #357412.
+
+ -- John Goerzen <jgoerzen@complete.org>  Mon, 20 Mar 2006 20:36:41 -0600
+
 missingpy (0.8.1) unstable; urgency=low
 
   * Rebuilt against GHC 6.4.1.
