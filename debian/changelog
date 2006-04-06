@@ -1,3 +1,9 @@
+missingpy (0.8.3) unstable; urgency=low
+
+  * Rebuild against MissingH 0.14.0.
+
+ -- John Goerzen <jgoerzen@complete.org>  Thu,  6 Apr 2006 02:45:18 -0500
+
 missingpy (0.8.2) unstable; urgency=low
 
   * Bump depends on MissingH.  Closes: #357412.
