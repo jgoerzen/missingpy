@@ -1,3 +1,9 @@
+missingpy (0.8.4) unstable; urgency=low
+
+  * Rebuild against MissingH 0.14.2.
+
+ -- John Goerzen <jgoerzen@complete.org>  Thu, 13 Apr 2006 00:46:40 -0500
+
 missingpy (0.8.3) unstable; urgency=low
 
   * Rebuild against MissingH 0.14.0.
