@@ -2,7 +2,7 @@ missingpy (0.8.5) unstable; urgency=low
 
   * Rebuild for GHC 6.4.2.
 
- -- John Goerzen <jgoerzen@katherina.lan.complete.org>  Mon,  3 Jul 2006 05:57:09 -0500
+ -- John Goerzen <jgoerzen@complete.org>  Mon,  3 Jul 2006 05:57:09 -0500
 
 missingpy (0.8.4) unstable; urgency=low
 
