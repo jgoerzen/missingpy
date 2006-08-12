@@ -1,3 +1,9 @@
+missingpy (0.8.6) unstable; urgency=low
+
+  * Rebuild against MissingH 0.14.5.  Closes: #382364.
+
+ -- John Goerzen <jgoerzen@complete.org>  Sat, 12 Aug 2006 09:19:19 -0500
+
 missingpy (0.8.5) unstable; urgency=low
 
   * Rebuild for GHC 6.4.2.
