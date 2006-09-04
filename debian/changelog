@@ -1,3 +1,9 @@
+missingpy (0.8.7) unstable; urgency=high
+
+  * Update to new Python policy.
+
+ -- John Goerzen <jgoerzen@complete.org>  Mon,  4 Sep 2006 09:38:38 -0500
+
 missingpy (0.8.6) unstable; urgency=low
 
   * Rebuild against MissingH 0.14.5.  Closes: #382364.
