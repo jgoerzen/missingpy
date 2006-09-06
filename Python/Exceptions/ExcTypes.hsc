@@ -30,7 +30,7 @@ terms can be negotiated for your project.
    License    : GNU GPL, version 2 or above
 
    Maintainer : John Goerzen,
-   Maintainer : jgoerzen@complete.org
+   Maintainer : jgoerzen\@complete.org
    Stability  : provisional
    Portability: portable
 

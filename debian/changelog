@@ -1,6 +1,7 @@
 missingpy (0.8.8) unstable; urgency=high
 
   * Compile tests against python 2.4.  Closes: #385993.
+  * Escaped email addresses in Haddock comments.
 
  -- John Goerzen <jgoerzen@complete.org>  Tue,  5 Sep 2006 05:14:15 -0500
 

@@ -40,7 +40,7 @@ genExcTypes copyright excs =
            "   License    : GNU GPL, version 2 or above",
            "",
            "   Maintainer : John Goerzen,",
-           "   Maintainer : jgoerzen@complete.org",
+           "   Maintainer : jgoerzen\@complete.org",
            "   Stability  : provisional",
            "   Portability: portable",
            "",
