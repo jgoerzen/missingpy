@@ -112,7 +112,7 @@ test_stringdbm = generic_persist_test (return SystemFS)
 
 tests = TestList [TestLabel "HashTable" (TestList test_hashtable),
                   TestLabel "StringDBM" (TestList test_stringdbm),
-                  TestLabel "Map" (TestList test_finitemap)
+                  TestLabel "Map" (TestList test_map)
                  ]
 
 

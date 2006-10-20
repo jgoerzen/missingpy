@@ -24,7 +24,7 @@ import MissingH.IO.HVFS
 import MissingH.IO.HVFS.InstanceHelpers
 import MissingH.AnyDBM
 import MissingH.AnyDBM.StringDBM
-import MissingH.AnyDBM.FiniteMapDBM
+import MissingH.AnyDBM.MapDBM
 import Data.HashTable
 import Data.List(sort)
 import Control.Exception(finally)
