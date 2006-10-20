@@ -44,11 +44,12 @@ local-pkg: all
 	cat .installed-pkg-config >> local-pkg
 	echo "]" >> local-pkg
 
-testsrc/runtests: all $(shell find . -name "*.hs") \
+testsrc/runtests: $(shell find . -name "*.hs") \
 			$(shell find . -name "*.hsc")
-	ghc6 -O2 -o testsrc/runtests -Ldist/build -odir dist/build \
-	   -hidir dist/build -package mtl -idist/build -itestsrc \
+	ghc6 -O2 -o testsrc/runtests -Iglue -Ldist/build -odir dist/build \
+	   -hidir dist/build -package mtl -fffi -idist/build -itestsrc \
 	   -L/usr/lib -L/usr/lib/python2.4/site-packages \
+	   -fglasgow-exts \
 	   -I/usr/include/python2.4 \
 		-package HUnit --make testsrc/runtests.hs \
 		dist/build/glue/glue.o dist/build/glue/excglue.o -lpython2.4
