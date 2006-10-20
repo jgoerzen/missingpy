@@ -23,7 +23,7 @@ import MissingH.IO.HVFS
 import MissingH.IO.HVFS.InstanceHelpers
 import MissingH.AnyDBM
 import MissingH.AnyDBM.StringDBM
-import MissingH.AnyDBM.FiniteMapDBM
+import MissingH.AnyDBM.MapDBM
 import System.Directory
 import MissingH.IO.HVFS.Utils
 import Data.HashTable
@@ -102,8 +102,8 @@ generic_persist_test initfunc openfunc =
 test_hashtable = generic_test (return ())
                   (\_ -> ((new (==) hashString)::IO (HashTable String String)))
 
-test_finitemap = generic_test (return ())
-                  (\_ -> newFiniteMapDBM)
+test_map = generic_test (return ())
+           (\_ -> newMapDBM)
 test_stringdbm = generic_persist_test (return SystemFS)
                    (\f -> openStringVDBM f "testtmp/StringDBM" ReadWriteMode)
                  ++
@@ -112,7 +112,7 @@ test_stringdbm = generic_persist_test (return SystemFS)
 
 tests = TestList [TestLabel "HashTable" (TestList test_hashtable),
                   TestLabel "StringDBM" (TestList test_stringdbm),
-                  TestLabel "FiniteMap" (TestList test_finitemap)
+                  TestLabel "Map" (TestList test_finitemap)
                  ]
 
 
