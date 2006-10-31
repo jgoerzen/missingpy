@@ -25,7 +25,7 @@ Extra-Lib-Dirs: %(libpaths)s
 -- End detected settings section.  Everything below here should not
 -- need editing.
 Name: MissingPy
-Version: 0.8.6
+Version: 0.8.10
 License: GPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Stability: Alpha
