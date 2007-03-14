@@ -1,3 +1,13 @@
+missingpy (0.8.9.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Rebuild against fixed python-central to fix ghc-pkg registration
+    during installation.
+  * debian/copyright: update FSF address.
+  * debian/rules: add binary-indep target which is required by policy.
+
+ -- Arjan Oosting <arjan@debian.org>  Sat, 25 Nov 2006 22:46:14 +0100
+
 missingpy (0.8.9) unstable; urgency=low
 
   * Rebuild for GHC 6.6.

@@ -7,7 +7,7 @@
 # This special exception was added by Craig Small in version 0.37 of dh-make.
 
 # Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_VERBOSE=1
 
 CFLAGS = -Wall -g
 
@@ -86,7 +86,7 @@ installdocs: builddocs
 	make test-hugs
 
 # Build architecture-independent files here.
-#binary-indep: builddocs installdocs
+binary-indep-DISABLED: builddocs installdocs
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -i
@@ -148,6 +148,8 @@ binary-arch: build install
 	dh_gencontrol -a
 	dh_md5sums -a
 	dh_builddeb -a
+
+binary-indep:
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure
