@@ -18,14 +18,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module AnyDBMtest(mf, generic_persist_test, generic_test, tests) where
 import Test.HUnit
-import MissingH.List
-import MissingH.IO.HVFS
-import MissingH.IO.HVFS.InstanceHelpers
-import MissingH.AnyDBM
-import MissingH.AnyDBM.StringDBM
-import MissingH.AnyDBM.MapDBM
+import Data.List.Utils
+import System.IO.HVFS
+import System.IO.HVFS.InstanceHelpers
+import Database.AnyDBM
+import Database.AnyDBM.StringDBM
+import Database.AnyDBM.MapDBM
 import System.Directory
-import MissingH.IO.HVFS.Utils
+import System.IO.HVFS.Utils
 import Data.HashTable
 import Data.List(sort)
 import Control.Exception(finally)

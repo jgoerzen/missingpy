@@ -22,7 +22,7 @@ import Test.HUnit
 import Python.Exceptions
 import MissingPy.FileArchive.BZip2
 import Data.List
-import MissingH.IO.HVIO
+import System.IO.HVIO
 import System.IO
 import System.IO.Error
 import Testutil
