@@ -43,7 +43,7 @@ Exposed-Modules: Python.Types,
  MissingPy.FileArchive.BZip2,
  MissingPy.AnyDBM
 Other-Modules: Python.ForeignImports
-Build-Depends: base, MissingH>=0.18.3, anydbm (>= 1.0.0)
+Build-Depends: base, MissingH>=0.18.3, anydbm>=1.0.0
 GHC-Options: -O2
 Extensions: ForeignFunctionInterface, TypeSynonymInstances
 """
