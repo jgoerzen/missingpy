@@ -33,14 +33,14 @@ Python file-like objects
 Written by John Goerzen, jgoerzen\@complete.org
 
 This module provides a Haskell interface to work with Python file-like objects.
-The Haskell interface is a "MissingH.IO.HVIO" interface, which is similar
+The Haskell interface is a "System.IO.HVIO" interface, which is similar
 in concept to the Python file-like object system.
 
 You can create such objects by using 'openPyFile' from this module, or
 'MissingPy.FileArchive.GZip.openGz' or 'MissingPy.FileArchive.BZip2.openBz2'.
 
 Functions that you can use to operate on these objects are defined at
-"MissingH.IO.HVIO".
+"System.IO.HVIO".
 -}
 
 module Python.Objects.File (-- * PyFile Objects
@@ -60,12 +60,12 @@ import System.IO
 import System.IO.Error
 import System.IO.Unsafe
 import Python.Exceptions
-import MissingH.IO.HVIO
+import System.IO.HVIO
 import Foreign.C.Types
 
 {- | The basic type for a Python file or file-like object.
 
-'PyFile's are a member of MissingH.IO.HVIO and can be used as any other
+'PyFile's are a member of System.IO.HVIO and can be used as any other
 Haskell HVFS object such as a Handle.
 
 'PyFile' objects cannot reliably detect EOF when asked by 'vIsEOF', but

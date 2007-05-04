@@ -28,10 +28,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
    Stability  : provisional
    Portability: portable
 
-This module interfaces "MissingH.AnyDBM" to Python's anydbm.py.
+This module interfaces "Database.AnyDBM" to Python's anydbm.py.
 Implementations for specific Python *dbm modules are also available.
 
-See and import "MissingH.AnyDBM" to use these features.
+See and import "Database.AnyDBM" to use these features.
 
 Written by John Goerzen, jgoerzen\@complete.org
 -}
@@ -48,7 +48,7 @@ import Python.Interpreter
 import Python.Utils
 import Python.Exceptions
 import Python.Objects
-import MissingH.AnyDBM
+import Database.AnyDBM
 
 {- | Flags used to open a dbm-type database -}
 data PyDBMOpenFlags = 
@@ -65,7 +65,7 @@ flag2str DBM_ReadWriteNew = "n"
 {- | Opens a persistent storage database using the \"best\" storage mechanism
 available to Python on this system.  This will usually be one of the *dbm
 services, though in rare circumstances, could be \"dumbdbm\", which is
-only marginally better than "MissingH.AnyDBM.StringDBM".
+only marginally better than "Database.AnyDBM.StringDBM".
 -}
 openAnyDBM :: FilePath -> PyDBMOpenFlags -> IO PyDict
 openAnyDBM = openSpecificDBM "anydbm"

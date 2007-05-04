@@ -35,7 +35,7 @@ Written by John Goerzen, jgoerzen\@complete.org
 This module can be used to access Python dicts and dict-like objects such as
 dbm databases.  For a higher-level interface to creating and working with these
 dbm interfaces, please see the functions in "MissingPy.AnyDBM".  Also,
-for functions that use this, please see "MissingH.AnyDBM".
+for functions that use this, please see "Database.AnyDBM".
 
 -}
 
@@ -49,7 +49,7 @@ import Python.Utils
 import Foreign
 import Foreign.C.Types
 import Python.Exceptions
-import MissingH.AnyDBM
+import Database.AnyDBM
 import Python.Types
 
 {- | The basic type for a Python dict or dict-like object. -}
