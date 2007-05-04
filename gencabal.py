@@ -25,11 +25,11 @@ Extra-Lib-Dirs: %(libpaths)s
 -- End detected settings section.  Everything below here should not
 -- need editing.
 Name: MissingPy
-Version: 0.8.6
+Version: 0.9.0
 License: GPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Stability: Alpha
-Copyright: Copyright (c) 2005-2006 John Goerzen
+Copyright: Copyright (c) 2005-2007 John Goerzen
 C-Sources: glue/glue.c glue/excglue.c
 Exposed-Modules: Python.Types,
  Python.Utils,
@@ -43,7 +43,7 @@ Exposed-Modules: Python.Types,
  MissingPy.FileArchive.BZip2,
  MissingPy.AnyDBM
 Other-Modules: Python.ForeignImports
-Build-Depends: base, MissingH>=0.11.0
+Build-Depends: base, MissingH>=0.18.4
 GHC-Options: -O2
 Extensions: ForeignFunctionInterface, TypeSynonymInstances
 """
