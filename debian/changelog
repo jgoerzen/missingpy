@@ -1,3 +1,10 @@
+missingpy (0.9.1.0) unstable; urgency=low
+
+  * Updated for newer ghc6 and MissingH.  Closes: #428939.
+  * Updated deps for anydbm.  Closes: #429709.
+
+ -- John Goerzen <jgoerzen@complete.org>  Wed, 30 Jan 2008 01:04:46 -0600
+
 missingpy (0.9.0) unstable; urgency=low
 
   * Updated for newer MissingH.  Closes: #406816, #409689.

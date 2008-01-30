@@ -25,11 +25,11 @@ Extra-Lib-Dirs: %(libpaths)s
 -- End detected settings section.  Everything below here should not
 -- need editing.
 Name: MissingPy
-Version: 0.9.0
+Version: 0.9.1
 License: GPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Stability: Alpha
-Copyright: Copyright (c) 2005-2007 John Goerzen
+Copyright: Copyright (c) 2005-2008 John Goerzen
 C-Sources: glue/glue.c glue/excglue.c
 Exposed-Modules: Python.Types,
  Python.Utils,
