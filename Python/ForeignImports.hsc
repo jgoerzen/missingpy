@@ -128,7 +128,7 @@ foreign import ccall unsafe "glue.h PyList_GetItem"
 foreign import ccall unsafe "glue.h PyTuple_GetItem"
  pyTuple_GetItem :: Ptr CPyObject -> CInt -> IO (Ptr CPyObject)
 
-foreign import ccall unsafe "glue.h PyMapping_Items"
+foreign import ccall unsafe "glue.h glue_PyMapping_Items"
  pyMapping_Items :: Ptr CPyObject -> IO (Ptr CPyObject)
 
 foreign import ccall unsafe "glue.h PyFloat_FromDouble"
@@ -144,7 +144,7 @@ foreign import ccall "glue.h PyObject_Call"
  cpyObject_Call :: Ptr CPyObject -> Ptr CPyObject -> Ptr CPyObject ->
                    IO (Ptr CPyObject)
 
-foreign import ccall unsafe "glue.h PyMapping_Keys"
+foreign import ccall unsafe "glue.h glue_PyMapping_Keys"
  pyMapping_Keys :: Ptr CPyObject -> IO (Ptr CPyObject)
 
 foreign import ccall unsafe "glue.h PyList_AsTuple"

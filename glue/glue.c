@@ -54,3 +54,10 @@ PyObject *hspy_none(void) {
   return Py_None;
 }
 
+PyObject *glue_PyMapping_Keys(PyObject *o) {
+  return PyMapping_Keys(o);
+}
+
+PyObject *glue_PyMapping_Items(PyObject *o) {
+  return PyMapping_Items(o);
+}
