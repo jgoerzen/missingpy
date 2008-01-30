@@ -45,7 +45,8 @@ Exposed-Modules: Python.Types,
 Other-Modules: Python.ForeignImports
 Build-Depends: base, MissingH>=0.18.3, anydbm>=1.0.0
 GHC-Options: -O2
-Extensions: ForeignFunctionInterface, TypeSynonymInstances
+Extensions: ForeignFunctionInterface, TypeSynonymInstances,
+            FlexibleInstances
 """
 
 fd = open("MissingPy.cabal", "wt")
