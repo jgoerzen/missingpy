@@ -31,7 +31,7 @@ clean:
 	-./setup clean
 	-rm -rf html `find . -name "*.o"` `find . -name "*.hi"` \
 		`find . -name "*~"` *.a setup dist testsrc/runtests \
-		 local-pkg
+		 local-pkg *.buildinfo
 	-cd doc && $(MAKE) clean
 
 .PHONY: local-pkg
