@@ -1,3 +1,12 @@
+missingpy (0.10.0.0) unstable; urgency=low
+
+  * Updated for newer Cabal infrastructure.
+  * No more need for gencabal.py
+  * Updated for newer MissingH, anydbm.
+  * Updated for Python 2.5.
+
+ -- John Goerzen <jgoerzen@complete.org>  Fri, 09 May 2008 10:58:04 -0500
+
 missingpy (0.9.1.0) unstable; urgency=low
 
   * Updated for newer ghc6 and MissingH.  Closes: #428939.
