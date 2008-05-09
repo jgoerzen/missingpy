@@ -21,12 +21,8 @@ all: setup
 	./setup build
 
 PYTHON ?= python
-setup: Setup.lhs MissingPy.cabal
-	ghc -package Cabal Setup.lhs -o setup
-
-
-MissingPy.cabal: gencabal.py
-	$(PYTHON) gencabal.py
+setup: Setup.hs MissingPy.cabal
+	ghc -package Cabal Setup.hs -o setup
 
 doc: setup
 	./setup haddock

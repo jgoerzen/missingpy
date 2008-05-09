@@ -7,16 +7,11 @@ it already.  It's very portable and easily built.
 
 Now, you're ready to build MissingPy.
 
-You'll need GHC 6.4 or above for this version.  If you have GHC 6.2,
-you'll need 0.1.2 or earlier.
+You'll need GHC 6.8.
 
-Next, download and install MissingH, version 0.11.0 or above.  Grab it
-from http://quux.org/devel/missingh.  Debian users can
+Next, download and install MissingH, version 1.0.1 or above.  Grab it
+from http://software.complete.org/missingh.  Debian users can
 apt-get install libghc6-missingh-dev.
-
-Now, run:
-
- python gencabal.py
 
 This will generate the build file MissingPy.cabal.  Look at the
 declarations near the top and edit them if necessary.
@@ -35,5 +30,3 @@ Optionally, to run the unit tests, you'll need to install HUnit.  Then:
  make test
 
 (More to come in this file)
-
-# arch-tag: Installation Instructions
