@@ -22,11 +22,9 @@ pyConfigProgram = (simpleProgram "python") {
 configure _ _ _ lbi = do
   mb_bi <- pyConfigBuildInfo Verbosity.normal lbi
   writeHookedBuildInfo "MissingPy.buildinfo" (mb_bi,[])
-\end{code}
 
-Populate BuildInfo using python tool.
-\begin{code}
-pgConfigBuildInfo verbosity lbi = do
+-- Populate BuildInfo using python tool.
+pyConfigBuildInfo verbosity lbi = do
   (pyConfigProg, _) <- requireProgram verbosity pyConfigProgram
                        (orLaterVersion $ Version [2, 5] []) (withPrograms lbi)
   let python = rawSystemProgramStdout verbosity pyConfigProgram
