@@ -6,6 +6,8 @@ Build-Depends: debhelper (>= 5.0.37.2), ghc6 (>= 6.8.2), ghc6 (<< 6.8.2-999), ha
 #Build-Depends-Indep: debhelper (>= 4.0.0), haddock, hugs, haskell-devscripts (>= 0.5.4), libhugs-hunit
 Standards-Version: 3.6.1
 Section: devel
+VCS-Browser: http://git.complete.org/missingpy
+VCS-Git: git://git.complete.org/missingpy
 
 Package: libghc6-missingpy-dev
 Section: devel
