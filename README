@@ -51,7 +51,7 @@ must call Python.Interpreter.py_initialize before doing anything else.
 
 The API docs can be built with "make doc", or you can find them at:
 
-http://quux.org/devel/missingpy
+http://software.complete.org/missingpy
 
 -------------------------
 Author & Homepage
@@ -61,11 +61,7 @@ MissingPy was written by John Goerzen <jgoerzen@complete.org>.
 
 The latest version may be obtained at:
 
-   gopher://quux.org/1/devel/missingpy
-
-or:
-
-   http://quux.org/devel/missingpy
+   http://software.complete.org/missingpy
 
 Documentation is also available on that page.
 
@@ -74,6 +70,4 @@ See the COPYRIGHT and COPYING files for more details.
 
 If the GPL is unacceptable for your uses, please e-mail me; alternative
 terms can be negotiated for your project.
-
-arch-tag: general information
 
