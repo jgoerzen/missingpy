@@ -27,7 +27,8 @@ Description:  MissingPy is two things:
  it.
 
 Build-Type: Custom
-Cabal-Version: >= 1.2 && < 1.3
+-- Cabal-Version: >= 1.2 && < 1.3
+Cabal-Version: >= 1.2
 Flag splitBase
   description: Choose the new smaller, split-up package
 
