@@ -30,6 +30,6 @@ pyConfigBuildInfo verbosity lbi = do
   libName      <- python ["-c", "import sys; print \"python%d.%d\" % (sys.version_info[0], sys.version_info[1])"]
   return $ Just emptyBuildInfo {
     extraLibDirs   = lines confLibDir ++ lines libDir,
-    includeDirs    = lines incDir,
+    includeDirs    = lines incDir ++ ["glue"],
     extraLibs      = lines libName
   }
