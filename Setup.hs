@@ -12,11 +12,13 @@ main = defaultMainWithHooks defaultUserHooks {
        }
 
 pyConfigProgram = (simpleProgram "python") {
-  programFindVersion = findProgramVersion "--version" $ \str ->
+  programFindVersion = findProgramVersion "-c 'import sys; print sys.version'" $ \str -> error (show str)
+{-
     -- Invoking "python --version" gives a string like "Python 2.5.2"
     case words str of
-      (_:ver:_) -> ver
+      (ver:_) -> ver
       _         -> ""
+-}
 }
 
 configure _ _ _ lbi = do
@@ -26,8 +28,8 @@ configure _ _ _ lbi = do
 -- Populate BuildInfo using python tool.
 pyConfigBuildInfo verbosity lbi = do
   (pyConfigProg, _) <- requireProgram verbosity pyConfigProgram
-                       (orLaterVersion $ Version [2, 5] []) (withPrograms lbi)
-  let python = rawSystemProgramStdout verbosity pyConfigProgram
+                       (orLaterVersion $ Version [2] []) (withPrograms lbi)
+  let python = rawSystemProgramStdout verbosity pyConfigProg
   libDir       <- python ["-c", "from distutils.sysconfig import *; print get_python_lib()"]
   incDir       <- python ["-c", "from distutils.sysconfig import *; print get_python_inc()"]
   confLibDir   <- python ["-c", "from distutils.sysconfig import *; print get_config_var('LIBDIR')"]
@@ -35,5 +37,5 @@ pyConfigBuildInfo verbosity lbi = do
   return $ Just emptyBuildInfo {
     extraLibDirs   = lines confLibDir ++ lines libDir,
     includeDirs    = lines incDir,
-    extraLibraries = lines libName
+    extraLibs      = lines libName
   }
