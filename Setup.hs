@@ -5,21 +5,14 @@ import Distribution.Simple
 import Distribution.Simple.LocalBuildInfo
 import Distribution.Simple.Program
 import qualified Distribution.Verbosity as Verbosity
+import Data.List
 
 main = defaultMainWithHooks defaultUserHooks {
          hookedPrograms = [pyConfigProgram],
          postConf=configure
        }
 
-pyConfigProgram = (simpleProgram "python") {
-  programFindVersion = findProgramVersion "-c 'import sys; print sys.version'" $ \str -> error (show str)
-{-
-    -- Invoking "python --version" gives a string like "Python 2.5.2"
-    case words str of
-      (ver:_) -> ver
-      _         -> ""
--}
-}
+pyConfigProgram = (simpleProgram "python") 
 
 configure _ _ _ lbi = do
   mb_bi <- pyConfigBuildInfo Verbosity.normal lbi
@@ -28,7 +21,8 @@ configure _ _ _ lbi = do
 -- Populate BuildInfo using python tool.
 pyConfigBuildInfo verbosity lbi = do
   (pyConfigProg, _) <- requireProgram verbosity pyConfigProgram
-                       (orLaterVersion $ Version [2] []) (withPrograms lbi)
+--                       (orLaterVersion $ Version [2] []) (withPrograms lbi)
+                       (AnyVersion) (withPrograms lbi)
   let python = rawSystemProgramStdout verbosity pyConfigProg
   libDir       <- python ["-c", "from distutils.sysconfig import *; print get_python_lib()"]
   incDir       <- python ["-c", "from distutils.sysconfig import *; print get_python_inc()"]
