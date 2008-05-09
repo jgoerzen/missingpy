@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-\begin{code}
 import Distribution.PackageDescription
 import Distribution.Simple
 import Distribution.Simple.LocalBuildInfo
@@ -8,33 +7,35 @@ import Distribution.Simple.Program
 import qualified Distribution.Verbosity as Verbosity
 
 main = defaultMainWithHooks defaultUserHooks {
-         hookedPrograms = [pgConfigProgram],
+         hookedPrograms = [pyConfigProgram],
          postConf=configure
        }
 
-pgConfigProgram = (simpleProgram "pg_config") {
+pyConfigProgram = (simpleProgram "python") {
   programFindVersion = findProgramVersion "--version" $ \str ->
-    -- Invoking "pg_config --version" gives a string like "PostgreSQL 8.0.13"
+    -- Invoking "python --version" gives a string like "Python 2.5.2"
     case words str of
       (_:ver:_) -> ver
       _         -> ""
 }
 
 configure _ _ _ lbi = do
-  mb_bi <- pgConfigBuildInfo Verbosity.normal lbi
-  writeHookedBuildInfo "HDBC-postgresql.buildinfo" (mb_bi,[])
+  mb_bi <- pyConfigBuildInfo Verbosity.normal lbi
+  writeHookedBuildInfo "MissingPy.buildinfo" (mb_bi,[])
 \end{code}
 
-Populate BuildInfo using pg_config tool.
+Populate BuildInfo using python tool.
 \begin{code}
 pgConfigBuildInfo verbosity lbi = do
-  (pgConfigProg, _) <- requireProgram verbosity pgConfigProgram
-                       (orLaterVersion $ Version [8] []) (withPrograms lbi)
-  let pg_config = rawSystemProgramStdout verbosity pgConfigProg
-  libDir       <- pg_config ["--libdir"]
-  incDir       <- pg_config ["--includedir"]
+  (pyConfigProg, _) <- requireProgram verbosity pyConfigProgram
+                       (orLaterVersion $ Version [2, 5] []) (withPrograms lbi)
+  let python = rawSystemProgramStdout verbosity pyConfigProgram
+  libDir       <- python ["-c", "from distutils.sysconfig import *; print get_python_lib()"]
+  incDir       <- python ["-c", "from distutils.sysconfig import *; print get_python_inc()"]
+  confLibDir   <- python ["-c", "from distutils.sysconfig import *; print get_config_var('LIBDIR')"]
+  libName      <- python ["-c", "import sys; print \"python%d.%d\" % (sys.version_info[0], sys.version_info[1])"]
   return $ Just emptyBuildInfo {
-    extraLibDirs = lines libDir,
-    includeDirs  = lines incDir
+    extraLibDirs   = lines confLibDir ++ lines libDir,
+    includeDirs    = lines incDir,
+    extraLibraries = lines libName
   }
-\end{code}
