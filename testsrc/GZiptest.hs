@@ -1,6 +1,6 @@
 {-# OPTIONS -fallow-overlapping-instances #-}
 {- arch-tag: GZip tests main file
-Copyright (C) 2005 John Goerzen <jgoerzen@complete.org>
+Copyright (C) 2005-2008 John Goerzen <jgoerzen@complete.org>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ test_gunzip =
     ,f "t2.gz" "Test 1Test 2"
     ,TestCase $ handlePy exc2ioerror $
                 do gzf <- openGz "testsrc/gzfiles/t1bad.gz" ReadMode 1
-                   assertRaises "crc" (Control.Exception.IOException $ userError "Python exceptions.IOError: CRC check failed") 
+                   assertRaises "crc" (Control.Exception.IOException $ userError "Python <type 'exceptions.IOError'>: CRC check failed") 
                       (handlePy exc2ioerror $ do c <- vGetContents gzf
                                                  "nonexistant bad data" @=? c
                       )
