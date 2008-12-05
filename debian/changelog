@@ -1,3 +1,10 @@
+missingpy (0.10.0.1) unstable; urgency=low
+
+  * Rebuild for newer MissingH, anydbm.
+  * Added dh_haskell_depends.
+
+ -- John Goerzen <jgoerzen@complete.org>  Fri, 05 Dec 2008 15:36:30 -0600
+
 missingpy (0.10.0.0) unstable; urgency=low
 
   * Updated for newer Cabal infrastructure.
