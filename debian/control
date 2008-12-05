@@ -2,7 +2,7 @@ Source: missingpy
 Priority: optional
 Maintainer: John Goerzen <jgoerzen@complete.org>
 XS-Python-Version: current
-Build-Depends: debhelper (>= 5.0.37.2), ghc6 (>= 6.8.2), ghc6 (<< 6.8.2-999), haskell-devscripts (>= 0.6.6), python-dev (>= 2.5), python-gdbm (>= 2.3.3), haddock, libghc6-missingh-dev (>= 1.0.3), python-central (>= 0.5), libghc6-anydbm-dev (>= 1.0.5.1), libghc6-regex-compat-dev, libghc6-regex-base-dev, libghc6-regex-posix-dev
+Build-Depends: debhelper (>= 5.0.37.2), ghc6 (>= 6.8.2), ghc6 (<< 6.8.2-999), haskell-devscripts (>= 0.6.6), python-dev (>= 2.5), python-gdbm (>= 2.3.3), haddock, libghc6-missingh-dev (>= 1.0.3), python-central (>= 0.5), libghc6-anydbm-dev (>= 1.0.5.2), libghc6-regex-compat-dev, libghc6-regex-base-dev, libghc6-regex-posix-dev
 #Build-Depends-Indep: debhelper (>= 4.0.0), haddock, hugs, haskell-devscripts (>= 0.5.4), libhugs-hunit
 Standards-Version: 3.6.1
 Section: devel
